@@ -1,12 +1,14 @@
-const openlogin = document.querySelector('#openlogin');
-const login = document.querySelector(".login");
-const signupBtn = document.querySelector("#signup-btn");
-const signupForm = document.querySelector(".signup-form")
-const backToLogin = document.querySelector("#backToLogin")
-const body = document.querySelectorAll("body");
+let openlogin = document.querySelector('#openlogin');
+let login = document.querySelector(".login");
+let signupBtn = document.querySelector("#signup-btn");
+let signupForm = document.querySelector(".signup-form");
+let backToLogin = document.querySelector("#backToLogin");
+let loginbox = document.querySelector(".loginbox");
+let grey = document.querySelector(".grey-box");
 
 openlogin.addEventListener("click", () => {
     login.style.display = "unset";
+    grey.style.display = "unset";
     signupForm.style.display = "none";
 });
 
@@ -20,8 +22,9 @@ signupBtn.addEventListener("click", () => {
     signupForm.style.display = "unset";
 });
 
-body.addEventListener("click", function() {
-    console.log("gewegw")
+function closeForm() {
     login.style.display = "none";
     signupForm.style.display = "none";
-})
+    grey.style.display = "none";
+}
+
