@@ -41,7 +41,7 @@
                 <label for="">Password</label>
                 <input type="password" class="inputfield">
                 <button type="button" name="" class="btn">signup</button>
-                <button type="button" name="" class="btn">login</button>
+                <button type="button" name="" id="backToLogin" class="btn">login</button>
             </fieldset>
         </form>
     </div>
