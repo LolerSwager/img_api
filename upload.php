@@ -19,9 +19,10 @@
                     $fileNameNew = uniqid('', true).".".$fileActualExt;
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
+                    $userName = "not-set";
                     $nextline = "\n";
                     $myfile = fopen('img_data.txt', 'a+') or die('Unable to open file!');
-                    fwrite($myfile, ','.$nextline.'{"img": "' . $fileNameNew . '", "fileSize": "'.$fileSize.'"}');     
+                    fwrite($myfile, ','.$nextline.'{"id": "0", "img": "' . $fileNameNew . '", "fileSize": "'.$fileSize.'", "user": "'.$userName.'"}');     
                     fclose($myfile);
                     header("Location: create_json.php");
                     exit;
