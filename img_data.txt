@@ -1,3 +1,1 @@
-{"id": "0", "img": "5ecbafc83b29c7.95424246.gif", "fileSize": "249333", "user": "not-set"},
-{"id": "0", "img": "5ecbafde0d8c84.67824734.jpg", "fileSize": "761918", "user": "not-set"},
-{"id": "0", "img": "5ecbb025a31914.05861235.png", "fileSize": "200683", "user": "not-set"}
+{"id": "0", "img": "5ecec67f148770.39928153.jpg", "fileSize": "10980", "user": "not-set", "mediaType": "img"}
