@@ -11,7 +11,7 @@
         $fileExt = explode('.', $fileName);
         $fileActualExt = strtolower(end($fileExt));
 
-        $allowedimg = array('jpg', 'jpeg', 'png', 'gif', 'svg');
+        $allowedimg = array('jpg', 'jpeg', 'png', 'gif', 'svg', 'webp');
         $allowedvideo = array('webm', 'mp4');
         $allowed = array_merge($allowedimg, $allowedvideo);
 
@@ -34,7 +34,6 @@
                     fwrite($myfile, ','.$nextline.'{"id": "0", "'.$mediaType.'": "' . $fileNameNew . '", "fileSize": "'.$fileSize.'", "user": "'.$userName.'", "mediaType": "'.$mediaType.'", "timeStamp": "'.$timeStamp.'"}');     
                     fclose($myfile);
                     header("Location: create_json.php");
-                    exit;
                 } else{
                     echo "your file is to big!";
                 }
