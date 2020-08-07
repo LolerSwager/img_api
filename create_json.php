@@ -3,6 +3,6 @@
     $myfile = fopen('JSON/output.json', 'w') or die('Unable to open file!');
     fwrite($myfile, "[\n".$data."\n]");     
     fclose($myfile);
-    header("Location: index.php");
+    header("Location: index.html");
     exit;
 ?>
