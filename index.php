@@ -56,5 +56,7 @@
     <div id="post">
 
     </div>
+    <a href="output.html" target="_blank"><p style="color: black">open gallery</p></a>
+    <a href="README.md" target="_blank"><p style="color: black">README</p></a>
 </body>
 </html>

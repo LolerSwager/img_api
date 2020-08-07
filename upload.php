@@ -38,8 +38,7 @@
                     echo "your file is to big!";
                 }
             } else{
-                echo "ther was an error!";
-                echo $fileError;
+                echo "ther was an error! ".$fileError;
             }
         } else{
             echo "you cannot upload files of this type!";

@@ -29,7 +29,6 @@ h1{
 	overflow: hidden;
 	position: absolute;
     z-index: -1;
-
 }
 
 .btn{
@@ -122,7 +121,7 @@ label{
     object-fit: cover;
 }
 
-video {
+#post video {
     /* override other styles to make responsive */
     width: 100%    !important;
     height: auto   !important;
