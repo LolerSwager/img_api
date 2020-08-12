@@ -365,4 +365,27 @@ main #post video {
   width: 100%    !important;
   height: auto   !important;
 }
+
+main .info {
+  width: 80%;
+  margin: 2em auto;
+}
+
+main .info section article {
+  margin: 0 0 5em 0;
+}
+
+main .info section article ul {
+  margin: 0 0 0 2em;
+}
+
+main .info section article ul li {
+  margin: 1em;
+}
+
+main .info section article a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.3em;
+}
 /*# sourceMappingURL=style.css.map */
