@@ -8,52 +8,112 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Document</title>
 </head>
+<header>
+    <nav>
+        <a href="index.html">logo</a>
+        <ul>
+            <li><a id="openupload">Upload</a></li>
+            <li><a id="openlogin">Login</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-    <form action="upload.php" method="POST" enctype="multipart/form-data" class="fileupload">
-        <h1>Jannick's image api</h1>
-        <fieldset class="nav_top">
-            <input type="file" name="file" id="file" class="inputfile">
-            <label for="file" class="btn"><i class="fas fa-file-image"></i> Choose a file</label>
-            <button type="uploadImg" name="uploadImg" class="btn"><i class="fas fa-upload"></i> Upload</button>
-            <button type="button" class="btn"><a href="JSON/output.json" target="_blank"><i class="fas fa-code"></i> Open json</a></button>
-            <button type="button" id="openlogin" class="btn">Login</button>
-        </fieldset>
-    </form>
-
-<div class="grey-box"></div>    
-    <div class="loginbox">
-        <form action="" method="POST" class="login form">
-        <span onclick="closeForm()"><i class="fas fa-times"></i></span>
-            <fieldset class="fieldset-login">
-                <legend>Login</legend>
-                <label for="userName">Username</label>
-                <input type="text" name="userName" class="inputfield">
-                <label for="userPassword">Password</label>
-                <input type="password" name="userPassword" class="inputfield">
-                <button type="button" name="login" class="btn">Login</button>
-                <button type="button" name="signup" id="signup-btn" class="btn">create account</button>
-            </fieldset>
-        </form>
-
-        <form action="" method="POST" class="signup-form form">
+    <div class="grey-box"></div>
+    <div class="box uploadBox">
+        <div class="box-top">
+            <p>Upload form</p>
             <span onclick="closeForm()"><i class="fas fa-times"></i></span>
-            <fieldset class="fieldset-login">
-                <legend>Signup</legend>
-                <label for="">Username</label>
-                <input type="text" class="inputfield">
-                <label for="">Password</label>
-                <input type="password" class="inputfield">
-                <button type="button" name="" class="btn">signup</button>
-                <button type="button" name="" id="backToLogin" class="btn">login</button>
-            </fieldset>
+        </div>
+        <form action="upload.php" method="POST" enctype="multipart/form-data" id="uploadform">
+            <img class="img-preview" id="output" src="img/arrow.png" alt="your image">
+            <input type="file" name="file" id="file" onchange="loadFile(event)">
+            <label class="choose-btn" for="file"> Choose a file</label>
+            <button class="upload-btn" type="uploadImg" name="uploadImg">Upload</button>
         </form>
     </div>
+    <div class="box loginBox">
+        <div class="box-top">
+            <p>Login form</p>
+            <span onclick="closeForm()"><i class="fas fa-times"></i></span>
+        </div>
+        <form action="" method="POST" id="loginform">
+            <div class="username">
+                <label for="Username">Username</label>
+                <input type="text" name="Username">
+            </div>
+            <div class="password">
+                <label for="Password">Password</label>
+                <input type="password" name="Password">
+            </div>
+            <button class="login-btn" type="button" name="login">Login</button>
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox" id="">
+                <label for="checkbox">Keep me logged in</label>
+            </div>
+            <a class="f-password" href="">Forgot password?</a>
+            <br>
+            <a class="register" type="button" name="signup" id="signup-btn">Register</a>
+        </form>
+    </div>
+    <div class="box registerBox">
+        <div class="box-top">
+            <p>Register form</p>
+            <span onclick="closeForm()"><i class="fas fa-times"></i></span>
+        </div>
+        <form action="" method="POST" id="Registerform">
+            <div class="username">
+                <label for="Username">Username</label>
+                <input type="text" name="Username">
+            </div>
+            <div class="email">
+                <label for="email">E-mail</label>
+                <input type="email" name="email">
+            </div>
+            <div class="password">
+                <label for="Password">Password</label>
+                <input type="password" name="Password">
+            </div>
+            <button class="register-btn" type="button" name="register">Register</button>
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox" id="">
+                <label for="checkbox">I have read and agree to the <a href="termsofservice.md">Terms of Service</a></label>
+            </div>
+            <br>
+            <a class="login" type="button" id="backToLogin">Login</a>
+        </form>
+    </div>
+    
+    
 
     <script src="js/openlogin.js"></script>
 
     <script src="js/fetch_imgs.js"></script>
 
-    <div id="post">
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myDIV");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
+
+    <script>
+        var loadFile = function(event) {
+          var output = document.getElementById('output');
+          output.src = URL.createObjectURL(event.target.files[0]);
+          output.onload = function() {
+            URL.revokeObjectURL(output.src) // free memory
+          }
+        };
+      </script>
+
+    
+    <main>
+        <div id="post"></div>
+    </main>
 
     </div>
     <a href="output.html" target="_blank"><p style="color: black">open gallery</p></a>

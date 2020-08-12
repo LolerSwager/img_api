@@ -1,30 +1,36 @@
 let openlogin = document.querySelector('#openlogin');
-let login = document.querySelector(".login");
+let loginBox = document.querySelector(".loginBox");
 let signupBtn = document.querySelector("#signup-btn");
-let signupForm = document.querySelector(".signup-form");
+let registerBox = document.querySelector(".registerBox");
 let backToLogin = document.querySelector("#backToLogin");
-let loginbox = document.querySelector(".loginbox");
 let grey = document.querySelector(".grey-box");
+let openupload = document.querySelector('#openupload');
+let uploadBox = document.querySelector('.uploadBox');
 
 openlogin.addEventListener("click", () => {
-    login.style.display = "unset";
+    loginBox.style.display = "unset";
     grey.style.display = "unset";
-    signupForm.style.display = "none";
+    registerBox.style.display = "none";
 });
 
 backToLogin.addEventListener("click", () => {
-    login.style.display = "unset";
-    signupForm.style.display = "none";
+    loginBox.style.display = "unset";
+    registerBox.style.display = "none";
 });
 
 signupBtn.addEventListener("click", () => {
-    login.style.display = "none";
-    signupForm.style.display = "unset";
+    loginBox.style.display = "none";
+    registerBox.style.display = "unset";
+});
+
+openupload.addEventListener("click", () => {
+    uploadBox.style.display = "unset";
+    grey.style.display = "unset";
 });
 
 function closeForm() {
-    login.style.display = "none";
-    signupForm.style.display = "none";
+    loginBox.style.display = "none";
+    registerBox.style.display = "none";
     grey.style.display = "none";
+    uploadBox.style.display = "none";
 }
-

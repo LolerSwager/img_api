@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fileupload{
+    background-color: #24252a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    color: royalblue;
+    margin: 0 1em;
+}
+
+.nav_top{
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+}
+
+.btn{
+    margin: 0.5em;
+    padding: 0.4em;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #59595d;
+    font-size: 1.20em;
+    font-weight: 700;
+    display: inline-block;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.btn:hover{
+    background-color: royalblue;
+    transition: all 0.5s ease;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.grey-box {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #24252a;
+    opacity: 0.5;
+}
+
+.loginbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
+    width: 500px;
+    margin: 0 auto;
+    background-color: #24252a;
+}
+
+label{
+    color: white;
+}
+
+.fieldset-login{
+    padding: 1em;
+    border: none;
+}
+
+.fieldset-login legend {
+    color: royalblue;
+}
+
+.fa-times{
+    font-size: 1.5em;
+    margin: 0.3em;
+}
+
+.inputfield{
+    width: 100%;
+    margin: 0 0 1em 0;
+    padding: 0.2em;
+    overflow: hidden;
+}
+
+.login{
+    display: none;
+    width: 100%;
+}
+
+.signup-form{
+    display: none;
+    width: 100%;
+}
+
+/* post img "galleri"*/
+#post{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 1em;
+    margin: 1em;
+}
+
+#post img{
+    width: 100%;
+    object-fit: cover;
+}
+
+#post video {
+    /* override other styles to make responsive */
+    width: 100%    !important;
+    height: auto   !important;
+  }

@@ -1,128 +1,368 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.fileupload{
-    background-color: #24252a;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+header {
+  background-color: #24252a;
 }
 
-h1{
-    color: royalblue;
-    margin: 0 1em;
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.nav_top{
-    border: none;
-    border-bottom: 2px solid black;
+header nav a {
+  color: royalblue;
+  font-size: 2em;
+  text-decoration: none;
+  margin: 0em 1em;
 }
 
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-    z-index: -1;
+header nav ul li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 1em;
 }
 
-.btn{
-    margin: 0.5em;
-    padding: 0.4em;
-    cursor: pointer;
-    border: 1px solid black;
-    background-color: #59595d;
-    font-size: 1.20em;
-    font-weight: 700;
-    display: inline-block;
-    color: white;
-    transition: all 0.5s ease;
-}
-
-.btn:hover{
-    background-color: royalblue;
-    transition: all 0.5s ease;
-}
-
-a{
-    color: white;
-    text-decoration: none;
+header nav ul li a {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .grey-box {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #24252a;
-    opacity: 0.5;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #24252a;
+  opacity: 0.5;
+  z-index: 0;
 }
 
-.loginbox{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);;
-    width: 500px;
-    margin: 0 auto;
-    background-color: #24252a;
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #24252A;
+  width: 450px;
 }
 
-label{
-    color: white;
+.box .box-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  background-color: black;
+  padding: 1em;
 }
 
-.fieldset-login{
-    padding: 1em;
-    border: none;
+.box .box-top .fa-times {
+  font-size: 1.5em;
 }
 
-.fieldset-login legend {
-    color: royalblue;
+.box .box-top .fa-times:hover {
+  color: red;
 }
 
-.fa-times{
-    font-size: 1.5em;
-    margin: 0.3em;
+.box .box-content img {
+  width: 100%;
 }
 
-.inputfield{
-    width: 100%;
-    margin: 0 0 1em 0;
-    padding: 0.2em;
-    overflow: hidden;
+.box form {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2em;
+  margin: 2em;
 }
 
-.login{
-    display: none;
-    width: 100%;
+.box #uploadform {
+      grid-template-areas: "img-preview img-preview" "choose-btn upload-btn";
 }
 
-.signup-form{
-    display: none;
-    width: 100%;
+.box #uploadform .img-preview {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: img-preview;
 }
 
-/* post img "galleri"*/
-#post{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-gap: 1em;
-    margin: 1em;
+.box #uploadform .choose-btn {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: choose-btn;
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 0.3em;
+  font-size: 1.3em;
+  text-align: center;
 }
 
-#post img{
-    width: 100%;
-    object-fit: cover;
+.box #uploadform .upload-btn {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: upload-btn;
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 0.3em;
+  font-size: 1.3em;
+  text-align: center;
 }
 
-#post video {
-    /* override other styles to make responsive */
-    width: 100%    !important;
-    height: auto   !important;
-  }
+.box #uploadform img {
+  width: 100%;
+}
+
+.box #uploadform #file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.box #loginform {
+      grid-template-areas: "username username" "password password" "login-btn login-btn" "checkbox f-password" "register register";
+}
+
+.box #loginform .username {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: username;
+}
+
+.box #loginform .username label {
+  display: block;
+  color: white;
+}
+
+.box #loginform .username input {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.box #loginform .password {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: password;
+}
+
+.box #loginform .password label {
+  display: block;
+  color: white;
+}
+
+.box #loginform .password input {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.box #loginform .login-btn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: login-btn;
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 0.3em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.box #loginform .checkbox {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: checkbox;
+  font-size: 1em;
+  color: white;
+}
+
+.box #loginform .checkbox input {
+  font-size: 1.3em;
+}
+
+.box #loginform .f-password {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: f-password;
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  text-align: right;
+}
+
+.box #loginform .register {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: register;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 0.3em;
+  font-size: 1.3em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.box #Registerform {
+      grid-template-areas: "username username" "email email" "password password" "register-btn register-btn" "checkbox checkbox" "login login";
+}
+
+.box #Registerform .username {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: username;
+}
+
+.box #Registerform .username label {
+  display: block;
+  color: white;
+}
+
+.box #Registerform .username input {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.box #Registerform .email {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: email;
+}
+
+.box #Registerform .email label {
+  display: block;
+  color: white;
+}
+
+.box #Registerform .email input {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.box #Registerform .password {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: password;
+}
+
+.box #Registerform .password label {
+  display: block;
+  color: white;
+}
+
+.box #Registerform .password input {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.box #Registerform .register-btn {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: register-btn;
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 0.3em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.box #Registerform .checkbox {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: checkbox;
+  font-size: 1em;
+  color: white;
+}
+
+.box #Registerform .checkbox input {
+  font-size: 1.3em;
+}
+
+.box #Registerform .checkbox a {
+  color: #4169E1;
+  text-decoration: none;
+}
+
+.box #Registerform .login {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: login;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 0.3em;
+  font-size: 1.3em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.loginBox {
+  display: none;
+}
+
+.registerBox {
+  display: none;
+}
+
+.uploadBox {
+  display: none;
+}
+
+main #post {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 1em;
+  margin: 1em;
+}
+
+main #post img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main #post video {
+  /* override other styles to make responsive */
+  width: 100%    !important;
+  height: auto   !important;
+}
+/*# sourceMappingURL=style.css.map */
