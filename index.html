@@ -6,7 +6,7 @@
     <meta name="description" content="upload images to json api">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <header>
     <nav>
@@ -25,7 +25,7 @@
             <p>Upload form</p>
             <span onclick="closeForm()"><i class="fas fa-times"></i></span>
         </div>
-        <form action="upload.php" method="POST" enctype="multipart/form-data" id="uploadform">
+        <form action="upload.php" method="POST" enctype="multipart/form-data" id="uploadform" multiple>
             <img class="img-preview" id="output" src="img/arrow.png" alt="your image">
             <input type="file" name="file" id="file" onchange="loadFile(event)">
             <label class="choose-btn" for="file"> Choose a file</label>
@@ -94,14 +94,14 @@
 
     <script>
         var loadFile = function(event) {
-          var output = document.getElementById('output');
-          output.src = URL.createObjectURL(event.target.files[0]);
-          output.onload = function() {
-            URL.revokeObjectURL(output.src) // free memory
-          }
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            console.log(event.target.files[0].type);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
         };
-      </script>
-      
+    </script>
     </div>
 </body>
 </html>
