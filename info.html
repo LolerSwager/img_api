@@ -25,8 +25,10 @@
             <p>Upload form</p>
             <span onclick="closeForm()"><i class="fas fa-times"></i></span>
         </div>
-        <form action="upload.php" method="POST" enctype="multipart/form-data" id="uploadform">
-            <img class="img-preview" id="output" src="img/arrow.png" alt="your image">
+        <form action="upload.php" method="POST" enctype="multipart/form-data" id="uploadform" multiple>
+            <div id="preview">
+                <img src="img/arrow.png" alt="arrow">
+            </div>
             <input type="file" name="file" id="file" onchange="loadFile(event)">
             <label class="choose-btn" for="file"> Choose a file</label>
             <button class="upload-btn" type="uploadImg" name="uploadImg">Upload</button>
@@ -119,14 +121,7 @@
 
     <script src="js/openlogin.js"></script>
 
-    <script>
-        var loadFile = function(event) {
-          var output = document.getElementById('output');
-          output.src = URL.createObjectURL(event.target.files[0]);
-          output.onload = function() {
-            URL.revokeObjectURL(output.src) // free memory
-          }
-        };
-      </script>
+    <script src="js/preview.js"></script>
+
 </body>
 </html>
