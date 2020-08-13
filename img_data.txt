@@ -1,3 +1,1 @@
 {"id": "0", "img": "5f342b101c7ab0.02605419.png", "fileSize": "327652", "user": "not-set", "mediaType": "img", "timeStamp": "1597254416"}
-,
-{"id": "0", "img": "5f3507bdc9ddc0.07777676.jpg", "fileSize": "36910", "user": "not-set", "mediaType": "img", "timeStamp": "1597310909"}
