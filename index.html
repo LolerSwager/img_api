@@ -96,8 +96,8 @@
 
     <script>
         var loadFile = function(event) {
-            // console.dir(event.target.value.split('.')[1]);
-            let eventvalue = event.target.value.split('.')[1];
+            let eventvalue = event.target.value.split('.').pop();
+            console.log(eventvalue);
             if((eventvalue === "jpg") || (eventvalue === "jpeg") || (eventvalue === "png") || (eventvalue === "gif") || (eventvalue === "svg")){
                 document.getElementById('preview').innerHTML = `<img id="output" src="img/arrow.png" alt="your image">`;
             }else{
@@ -110,6 +110,5 @@
             }
         };
     </script>
-    </div>
 </body>
 </html>
