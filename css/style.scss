@@ -6,6 +6,9 @@
 }
 
 $dark:#24252a;
+.sticky{
+    background-color: red;
+}
 
 header{
     background-color: $dark;
@@ -62,11 +65,6 @@ header{
             color: red;
         }
     }
-    .box-content{
-        img{
-            width: 100%;
-        }
-    }
     form{
         display: grid;
         grid-gap: 2em;
@@ -74,10 +72,16 @@ header{
     }
     #uploadform{
         grid-template-areas: 
-        "img-preview img-preview"
+        "preview preview"
         "choose-btn upload-btn";
-        .img-preview{
-            grid-area: img-preview;
+        #preview{
+            grid-area: preview;
+            img{
+                width: 100%;
+            }
+            video{
+                width: 100%;
+            }
         }
         .choose-btn{
             grid-area: choose-btn;
@@ -96,9 +100,6 @@ header{
             padding: 0.3em;
             font-size: 1.3em;
             text-align: center;
-        }
-        img{
-            width: 100%;
         }
         #file{
             width: 0.1px;

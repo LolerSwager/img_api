@@ -6,6 +6,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.sticky {
+  background-color: red;
+}
+
 header {
   background-color: #24252a;
 }
@@ -85,10 +89,6 @@ header nav ul li a {
   color: red;
 }
 
-.box .box-content img {
-  width: 100%;
-}
-
 .box form {
   display: -ms-grid;
   display: grid;
@@ -97,14 +97,22 @@ header nav ul li a {
 }
 
 .box #uploadform {
-      grid-template-areas: "img-preview img-preview" "choose-btn upload-btn";
+      grid-template-areas: "preview preview" "choose-btn upload-btn";
 }
 
-.box #uploadform .img-preview {
+.box #uploadform #preview {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: img-preview;
+  grid-area: preview;
+}
+
+.box #uploadform #preview img {
+  width: 100%;
+}
+
+.box #uploadform #preview video {
+  width: 100%;
 }
 
 .box #uploadform .choose-btn {
@@ -129,10 +137,6 @@ header nav ul li a {
   padding: 0.3em;
   font-size: 1.3em;
   text-align: center;
-}
-
-.box #uploadform img {
-  width: 100%;
 }
 
 .box #uploadform #file {

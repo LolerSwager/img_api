@@ -26,7 +26,9 @@
             <span onclick="closeForm()"><i class="fas fa-times"></i></span>
         </div>
         <form action="upload.php" method="POST" enctype="multipart/form-data" id="uploadform" multiple>
-            <img class="img-preview" id="output" src="img/arrow.png" alt="your image">
+            <div id="preview">
+                <img src="img/arrow.png" alt="arrow">
+            </div>
             <input type="file" name="file" id="file" onchange="loadFile(event)">
             <label class="choose-btn" for="file"> Choose a file</label>
             <button class="upload-btn" type="uploadImg" name="uploadImg">Upload</button>
@@ -94,14 +96,24 @@
 
     <script>
         var loadFile = function(event) {
+            // console.dir(event.target.value.split('.')[1]);
+            let eventvalue = event.target.value.split('.')[1];
+            if((eventvalue === "jpg") || (eventvalue === "jpeg") || (eventvalue === "png") || (eventvalue === "gif") || (eventvalue === "svg")){
+                document.getElementById('preview').innerHTML = `<img id="output" src="img/arrow.png" alt="your image">`;
+            }else{
+                document.getElementById('preview').innerHTML = `<video id="output" muted autoplay></video>`;
+            }
             var output = document.getElementById('output');
             output.src = URL.createObjectURL(event.target.files[0]);
-            console.log(event.target.files[0].type); // log file type
             output.onload = function() {
                 URL.revokeObjectURL(output.src) // free memory
             }
         };
+
+        //<img class="img-preview" id="output" src="img/arrow.png" alt="your image">
     </script>
     </div>
 </body>
 </html>
+
+/
