@@ -101,7 +101,7 @@
             if((eventvalue === "jpg") || (eventvalue === "jpeg") || (eventvalue === "png") || (eventvalue === "gif") || (eventvalue === "svg")){
                 document.getElementById('preview').innerHTML = `<img id="output" src="img/arrow.png" alt="your image">`;
             }else{
-                document.getElementById('preview').innerHTML = `<video id="output" muted autoplay></video>`;
+                document.getElementById('preview').innerHTML = `<video id="output" autoplay loop></video>`;
             }
             var output = document.getElementById('output');
             output.src = URL.createObjectURL(event.target.files[0]);
@@ -115,5 +115,3 @@
     </div>
 </body>
 </html>
-
-/
